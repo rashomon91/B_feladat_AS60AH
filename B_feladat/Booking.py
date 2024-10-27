@@ -19,6 +19,8 @@ class BookingSystem:
             return "Nincs ilyen járat!"
         if not BookingSystem.valid_date(date):
             return "Érvénytelen dátum!"
+        if not self.is_flight_available(flight, date):
+            return "A járat nem elérhető a megadott időpontban!"
         book = Booking(flight, passenger_name, date)
         self.books.append(book)
         return flight.price
@@ -41,5 +43,7 @@ class BookingSystem:
         except ValueError:
             return False
 
+    def is_flight_available(self, flight, date):
+        pass
 
 
