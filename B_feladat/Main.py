@@ -60,7 +60,7 @@ while True:
             continue
 
         fee = book_system.book_ticket(flight, passenger_name, date)
-        print("Sikeres foglalás! Ár: {fee}")
+        print(f"Sikeres foglalás! Ár: {fee}")
 
     elif choice == '2':
         passenger_name = input("Utas neve a lemondáshoz: ")
